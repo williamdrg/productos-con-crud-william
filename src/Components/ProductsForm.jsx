@@ -1,7 +1,7 @@
 import { useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 
-const ProductsForm = ({submitProduct, editProduct, updateProduct, modal,  mensajeAdd, mensajeEdit}) => {
+const ProductsForm = ({submitProduct, editProduct, updateProduct, modal,  mensajeAdd, mensajeEdit, stateModal}) => {
 
     const {handleSubmit, register, reset, formState: {errors}} = useForm()
 
@@ -39,10 +39,11 @@ const ProductsForm = ({submitProduct, editProduct, updateProduct, modal,  mensaj
     } 
 
     const num = (e) => {e.target.value = e.target.value.replace(/[^0-9]/g, "")}
+    console.log(stateModal)
 
     return (
             
-            <form onSubmit={handleSubmit(submit)} className="form">
+            <form onSubmit={handleSubmit(submit)} className={stateModal ? 'form' : 'form_close' }>
                 <i onClick={modal} className='bx bx-x'></i>
                 <h2>Nuevo producto</h2>
 

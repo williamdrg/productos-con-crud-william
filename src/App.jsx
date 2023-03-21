@@ -85,6 +85,7 @@ function App() {
        modal = {()=>setModal(!modal)}
        mensajeAdd = {(m)=>mensajeAdd(m)}
        mensajeEdit = {(m)=>mensajeEdit(m)}
+       stateModal = {modal}
       />
       </div>
 

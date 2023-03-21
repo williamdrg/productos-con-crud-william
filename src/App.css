@@ -205,7 +205,7 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
 
 .close_form_container {
   width: 100%;
-  transform: translateY(-100vh);
+  transform: translateY(-200vh);
   transition: transform 1s;
   position: fixed;
   display: flex;
@@ -213,6 +213,7 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   align-items: center;
   z-index: 2;
 }
+
 
 
 .form {
@@ -226,6 +227,20 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   gap: 1rem;
   box-shadow: 5px 5px 10px  #48529944;
   position: relative;
+}
+
+.form_close {
+  width: 430px;
+  height: 650px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  gap: 1rem;
+  box-shadow: 5px 5px 10px  #48529944;
+  position: relative;
+  transform: translateY(-100vh);
   transition: transform 1s;
 }
 
