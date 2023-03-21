@@ -1,0 +1,587 @@
+body {
+  background-color: #F6F5FF;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: #F6F5FF;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 4px 1px rgb(61, 84, 255);
+  z-index: 1;
+}
+
+.navbar h1 {
+  padding-left: 20px;
+}
+
+.btn_add {
+  align-self: flex-end;
+  position: absolute;
+  margin: 10px 20px 0px 0px;
+}
+
+
+/* tarjetas de productos */
+.card_container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.plan-card {
+  background: #fff;
+  width: 15rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  border-bottom: 4px solid rgba(22,6,203,1);
+  box-shadow: 0 6px 30px rgba(207, 212, 222, 0.3);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.plan-card h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  padding-bottom: 5px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.plan-card h2 span {
+  display: block;
+  margin-top: -4px;
+  color: #4d4d4d;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.etiquet-price {
+  position: relative;
+  background: rgb(74,93,255);
+background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(22,6,203,1) 100%);
+  width: 14.46rem;
+  margin-left: -0.65rem;
+  padding: .2rem 1.2rem;
+  border-radius: 5px 0 0 5px;
+}
+
+.etiquet-price p {
+  margin: 0;
+  padding-top: .4rem;
+  display: flex;
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: white;
+}
+
+.etiquet-price p:before {
+  content: "$";
+  margin-right: 5px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.etiquet-price p:after {
+  content: "/ USD";
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.etiquet-price div {
+  position: absolute;
+  bottom: -23px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid rgb(14, 5, 107);
+  border-bottom: 10px solid transparent;
+  border-right: 13px solid transparent;
+  z-index: -6;
+}
+
+.benefits-list {
+  margin-top: 16px;
+}
+
+.benefits-list ul {
+  padding: 0;
+  font-size: 14px;
+}
+
+.benefits-list ul li {
+  color: #4d4d4d;
+  list-style: none;
+  margin-bottom: .2rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+
+.btn {
+  background-color: transparent;
+  position: relative;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(61, 84, 255);
+  border-radius: 5px;
+  color: white;
+  margin: 0px 0 0 8px;
+}
+
+.btn::after {
+  content: 'delete';
+  position: absolute;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(168, 7, 7);
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: .2s linear;
+  transition-delay: .2s;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn_edit::after {
+  content: 'edit';
+}
+
+.icon {
+  transform: scale(1.2);
+  transition: .2s linear;
+}
+
+.btn:hover > .icon {
+  transform: scale(1.5);
+}
+
+.btn:hover > .icon {
+  fill: rgb(168, 7, 7);
+}
+
+.btn:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: -160%;
+}
+
+
+
+/* Formulario */
+.form_container {
+  width: 100%;
+  height: 100vh;
+  background-color: #04040460;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: transform 1s;
+}
+
+.close_form_container {
+  width: 100%;
+  transform: translateY(-100vh);
+  transition: transform 1s;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+
+.form {
+  width: 430px;
+  height: 650px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  gap: 1rem;
+  box-shadow: 5px 5px 10px  #48529944;
+  position: relative;
+  transition: transform 1s;
+}
+
+.bx-x {
+  position: absolute;
+  font-size: 40px;
+  top: 0;
+  right: 0;
+  padding: 15px;
+}
+
+.bx-x:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+
+.form h2 {
+  font-size: 30px;
+}
+
+.form  label{
+  margin: 10px 0 0 0px;
+  font-size: 18px;
+}
+
+.form input {
+  font-size: 18px;
+  padding: 10px 0 10px 8px;
+  border-radius: 10px;
+}
+
+
+.toggler {
+  width: 100%;
+}
+
+.toggler input {
+  display: none;
+}
+
+.toggler label {
+  display: block;
+  position: relative;
+  width: 72px;
+  height: 36px;
+  border: 1px solid #d6d6d6;
+  border-radius: 36px;
+  background: #e4e8e8;
+  cursor: pointer;
+}
+
+.toggler label::after {
+  display: block;
+  border-radius: 100%;
+  background-color: #d7062a;
+  content: '';
+  animation-name: toggler-size;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-direction: forwards;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+.toggler label::after, .toggler label .toggler-on, .toggler label .toggler-off {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%) translateX(-50%);
+  transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.toggler input:checked + label::after, .toggler input:checked + label .toggler-on, .toggler input:checked + label .toggler-off {
+  left: 75%;
+}
+
+.toggler input:checked + label::after {
+  background-color: #50ac5d;
+  animation-name: toggler-size2;
+}
+
+.toggler .toggler-on, .toggler .toggler-off {
+  opacity: 1;
+  z-index: 2;
+}
+
+.toggler input:checked + label .toggler-off, .toggler input:not(:checked) + label .toggler-on {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.toggler .path {
+  fill: none;
+  stroke: #fefefe;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+@keyframes toggler-size {
+  0%, 100% {
+    width: 26px;
+    height: 26px;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@keyframes toggler-size2 {
+  0%, 100% {
+    width: 26px;
+    height: 26px;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+}
+ 
+
+
+ .custom-btn {
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+ }
+ 
+ .btn-1 {
+  background: rgb(6,14,131);
+  background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+  border: none;
+ }
+ 
+ .btn-1:hover {
+  background: rgb(0,3,255);
+  background: linear-gradient(0deg, rgb(0, 17, 255) 0%, rgba(2,126,251,1) 100%);
+ }
+
+ .form_error {
+  color: tomato;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top:  -10px;
+ }
+
+/* ******* */
+
+.btn_add {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn_add span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn_add bx-plus {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn_add:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.bx-plus {
+  font-size: 30px;
+}
+.btn_add:hover .bx-plus {
+  transform: translateX(4rem)  scale(1.1);
+  
+}
+
+.btn_add:hover span {
+  transform: translateX(10rem);
+}
+
+.btn_add:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* venta de confirmación de elimiar producto  */
+
+.modal_Delete_container {
+  width: 100%;
+  height: 100vh;
+  background-color: #04040460;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  
+}
+
+.modal_delete {
+  width: 350px;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  font-family: Arial rgb(49, 5, 5); 
+  font-weight: bold; 
+  color: #05208c; 
+  text-shadow: 3px 4px 10px rgba(0,0,0,0.39);  
+}
+
+.modal_delete button {
+  margin: 20px;
+}
+
+/* modal de confimación de producto creado */
+
+.container_modal_successful {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.open_modal_successful {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 5px 5px 10px  #48529944;
+  z-index: 3;
+  align-items: center;
+
+  font-family: Arial rgb(49, 5, 5); 
+  font-weight: bold; 
+  color: #05208c; 
+  text-shadow: 3px 4px 10px rgba(0,0,0,0.39);
+
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.open_modal_successful h3 {
+  text-align: center;
+}
+
+.bx-check {
+  font-size: 130px;
+  text-align: center;
+  color: green;
+  font-weight: 900;
+  text-shadow: 3px 4px 10px rgba(0,0,0,0.39);
+}
+
+.open_modal_successful button {
+  margin: 30px;
+}
+
+.close_modal_successful {
+  display: none;
+}
+
+/* responsive */
+
+@media screen and (max-width: 425px) {
+  
+  .btn_add {
+    width: 100px;
+    height: 50px;
+    font-size: 12px;
+    margin: 10px 10px 0px 0px;
+  }
+
+  .bx-plus {
+    font-size: 20px;
+  }
+
+  .form {
+    width: 290px;
+    height: 600px;
+    padding: 15px;
+    gap: 0.5rem;
+    font-size: 16px;
+  }
+
+  .form_error {
+    font-size: 12px;
+  }
+
+  .form h2 {
+    font-size: 25px;
+  }
+  
+  .form  label{
+    font-size: 16px;
+  }
+  
+  .form input {
+    font-size: 14px;
+  }
+  .navbar h1 {
+    font-size: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+
+  .modal_delete {
+    font-size: 14px;
+  }
+}
