@@ -519,6 +519,7 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
 
 .open_modal_successful h3 {
   text-align: center;
+  padding: 10px;
 }
 
 .bx-check {
