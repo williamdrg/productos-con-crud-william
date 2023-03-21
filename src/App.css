@@ -201,11 +201,12 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   left: 0;
   z-index: 2;
   transition: transform 1s;
+  overflow: scroll;
 }
 
 .close_form_container {
   width: 100%;
-  transform: translateY(-200vh);
+  transform: translateY(-300vh);
   transition: transform 1s;
   position: fixed;
   display: flex;
@@ -227,6 +228,7 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   gap: 1rem;
   box-shadow: 5px 5px 10px  #48529944;
   position: relative;
+  margin: auto;
 }
 
 .form_close {
