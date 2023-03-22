@@ -86,6 +86,7 @@ function App() {
        mensajeAdd = {(m)=>mensajeAdd(m)}
        mensajeEdit = {(m)=>mensajeEdit(m)}
        stateModal = {modal}
+       clean = {()=>setEditProduct(null)}
       />
       </div>
 

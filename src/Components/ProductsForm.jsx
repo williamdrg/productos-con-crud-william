@@ -1,13 +1,13 @@
 import { useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 
-const ProductsForm = ({submitProduct, editProduct, updateProduct, modal,  mensajeAdd, mensajeEdit, stateModal}) => {
+const ProductsForm = ({submitProduct, editProduct, updateProduct, modal,  mensajeAdd, mensajeEdit, stateModal, clean}) => {
 
     const {handleSubmit, register, reset, formState: {errors}} = useForm()
 
     useEffect(() => {
         if (editProduct) {
-            reset(editProduct)
+            reset(editProduct)  
         } else {
             empyForm()
         }
@@ -24,6 +24,11 @@ const ProductsForm = ({submitProduct, editProduct, updateProduct, modal,  mensaj
         }
     }
 
+    const cleanUpdate = () => {
+        modal()
+        clean()
+    }
+    
     const messageAddProduct = 'Producto agregado exitosamente'
     const messageEditProduct = 'Producto actualizado exitosamente'
     
@@ -39,12 +44,11 @@ const ProductsForm = ({submitProduct, editProduct, updateProduct, modal,  mensaj
     } 
 
     const num = (e) => {e.target.value = e.target.value.replace(/[^0-9]/g, "")}
-    console.log(stateModal)
 
     return (
             
             <form onSubmit={handleSubmit(submit)} className={stateModal ? 'form' : 'form_close' }>
-                <i onClick={modal} className='bx bx-x'></i>
+                <i onClick={()=> cleanUpdate ()} className='bx bx-x'></i>
                 <h2>Nuevo producto</h2>
 
                 <label htmlFor="name">Nombre: </label>

@@ -141,6 +141,7 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   border-radius: 5px;
   color: white;
   margin: 0px 0 0 8px;
+  cursor: pointer;
 }
 
 .btn::after {
@@ -445,12 +446,12 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   font-size: 30px;
 }
 .btn_add:hover .bx-plus {
-  transform: translateX(4rem)  scale(1.1);
+  transform: translateX(5rem)  scale(1.1);
   
 }
 
 .btn_add:hover span {
-  transform: translateX(10rem);
+  transform: translateX(20rem);
 }
 
 .btn_add:active {
@@ -508,9 +509,9 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   height: 100vh;
   position: fixed;
   z-index: 3;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 .open_modal_successful {
   width: 300px;
@@ -520,18 +521,18 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   box-shadow: 5px 5px 10px  #48529944;
   z-index: 3;
-  align-items: center;
 
   font-family: Arial rgb(49, 5, 5); 
   font-weight: bold; 
   color: #05208c; 
   text-shadow: 3px 4px 10px rgba(0,0,0,0.39);
 
-  /* top: 50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
 }
 
 .open_modal_successful h3 {
@@ -548,7 +549,7 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
 }
 
 .open_modal_successful button {
-  margin: 30px;
+  margin: 20px;
 }
 
 .close_modal_successful {
@@ -601,5 +602,10 @@ background: linear-gradient(177deg, rgba(74,93,255,0.9416141456582633) 0%, rgba(
 
   .modal_delete {
     font-size: 14px;
+  }
+
+  .btn_add:hover .bx-plus {
+    transform: translateX(2rem)  scale(1.1);
+    
   }
 }
